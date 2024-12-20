@@ -2,16 +2,15 @@
 % Entry point for the Mental Health Diagnosis Expert System
 
 % Load the knowledge base, rules, and questions
-:- consult('knowledge_base.pl').
-:- consult('rules.pl').
-:- consult('questions.pl').
+:- consult('rules.pl').       % Load the rules for diagnosing
+:- consult('questions.pl').   % Load the questions to ask the user
 
 % Main function to start the diagnosis process
 start_diagnosis :-
     write('Welcome to the Mental Health Diagnosis System!'), nl,
     write('Please answer the following questions to help us identify the condition.'), nl, nl,
-    ask_food_intake, nl,
-    ask_mentality, nl,
+    ask_food_intake, nl,  % First question
+    ask_mentality, nl,    % Second question
     ask_feelings_of_sadness, nl,
     ask_elevated_moods, nl,
     ask_fatigue, nl,
@@ -19,7 +18,7 @@ start_diagnosis :-
     ask_abnormal_eating_habits, nl,
     ask_strong_desire_to_be_thin, nl,
     ask_trauma, nl,
-    diagnose, nl.
+    diagnose, nl.   % Diagnose and provide results
 
 % Diagnose the condition based on user input
 diagnose :-

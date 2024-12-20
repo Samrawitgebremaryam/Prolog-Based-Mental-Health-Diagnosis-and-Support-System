@@ -12,11 +12,11 @@ find_diagnosis(bulimia_nervosa) :-
     symptom(abnormal_eating_habits),
     mentality(strong_desire_to_be_thin).
 
-find_diagnosis(depression) :-
+find_diagnosis(depression) :- 
     symptom(feelings_of_sadness),
     severity(moderate_or_severe).
 
-find_diagnosis(bipolar_disorder) :-
+find_diagnosis(bipolar_disorder) :- 
     symptom(elevated_moods),
     symptom(fatigue),
     symptom(aggressive_behavior).
@@ -32,20 +32,20 @@ severity(severe) :-
     write('For severe conditions, immediate professional help is necessary. Consider seeing a mental health provider.').
 
 % Provide personalized advice based on diagnosis
-advice(depression) :-
+advice(depression) :- 
     write('For severe depression, immediate help is crucial. Please contact a mental health professional or a helpline.').
 
-advice(anxiety) :-
+advice(anxiety) :- 
     write('For anxiety, cognitive-behavioral therapy (CBT) can be highly effective. Practice relaxation techniques regularly.').
 
 % Self-help tips based on diagnosis
-self_help_tips(depression) :-
+self_help_tips(depression) :- 
     write('Self-help Tips for Depression:'), nl,
     write('- Establish a routine, even if it feels hard at first.'), nl,
     write('- Engage in physical activities like walking or yoga.'), nl,
     write('- Reach out to a trusted friend or family member.'), nl.
 
-self_help_tips(anxiety) :-
+self_help_tips(anxiety) :- 
     write('Self-help Tips for Anxiety:'), nl,
     write('- Practice breathing exercises to calm your nervous system.'), nl,
     write('- Limit caffeine and sugar intake as they can trigger anxiety.'), nl,
